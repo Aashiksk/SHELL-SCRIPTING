@@ -2,8 +2,8 @@
 
 #!/bin/bash
 
-mID=$(id -u)
-if [ "$mID" -ne 0 ]
+MYID=$(id -u)
+if [ "$MYID" -ne 0 ]
 then
   echo "You are not root user"  
 else
