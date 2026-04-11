@@ -1,0 +1,17 @@
+
+Special Variables in Shell Scripting:
+$0 - The name of the script itself
+$1 - The first command line argument  
+$2 - The second command line argument
+$3 - The third command line argument
+$# - The number of command line arguments passed to the script
+$@ - All the command line arguments passed to the script
+$? - The exit status of the last command executed, 0 indicates success, while any non-zero value indicates an error
+$$ - The process ID of the current script
+$! - The process ID of the last background command
+$PWD - The current working directory
+$HOME - The home directory of the current user
+$USER - The username of the current user
+$SHELL - The default shell of the current user
+$ID - The user ID of the current user, 0 indicates root user
+$RANDOM - A random number between 0 and 32767
