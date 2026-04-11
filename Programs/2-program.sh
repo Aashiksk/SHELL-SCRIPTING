@@ -6,6 +6,4 @@ mID=$(id -u)
 if [ "$mID" -eq 0 ]
 then
   echo "You are root user"
-else
-  echo "Normal user"
 fi
