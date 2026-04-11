@@ -3,7 +3,9 @@
 #!/bin/bash
 
 mID=$(id -u)
-if [ "$mID" -eq 0 ]
+if [ "$mID" -ne 0 ]
 then
   echo "You are root user"
+
+
 fi
