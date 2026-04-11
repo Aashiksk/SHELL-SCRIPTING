@@ -7,12 +7,12 @@ if [ "$mID" -ne 0 ]
 then
   echo "You are not root user"  
 else
-  yum install mariadb-server -y
+  sudo yum install python3 -y
   if [ $? -eq 0 ]
   then 
-      echo "mariadb-server is installed successfully"
+      echo "python3 is installed successfully"
     else
-      echo "mariadb-server installation failed"
+      echo "python3 installation failed"
     fi
 
 fi
