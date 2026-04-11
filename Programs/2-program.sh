@@ -5,7 +5,7 @@
 mID=$(id -u)
 if [ "$mID" -ne 0 ]
 then
-  echo "You are root user"
+  echo "You are root user"  
 
-
+yum install httpd -y
 fi
