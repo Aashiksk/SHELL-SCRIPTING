@@ -14,10 +14,10 @@ fi
 Validate(){
     if [ $1 -ne 0 ]
     then  
-        echo " $2 installation ...failed"
+        echo -e " $2 installation ... $R failed $N"
         exit 1
     else
-        echo " $2 installation ...success"
+        echo " $2 installation ... $G success $N"
     fi
 }
 
@@ -28,7 +28,7 @@ then
     dnf install nginx -y
     Validate $? " nginx installation"
 else
-    echo " nginx is already ...installed"
+    echo " nginx is already ... $Y installed  $N"
 fi        
 
 dnf list installed httpd
@@ -37,5 +37,5 @@ then
     dnf install httpd -y
     Validate $? "httpd installation"
 else
-    echo " httpd is already ...installed"
+    echo " httpd is already ... $Y installed $N"
 fi   
