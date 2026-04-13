@@ -1,6 +1,5 @@
 #!/bin/bash
 
-
 MYID=$(id -u)
 if [ "$MYID" -ne 0 ]
 then
@@ -9,11 +8,11 @@ then
 fi
 
 
-dnf list installed nginix
-if [ $? -ne 0]
+dnf list installed nginx
+if [ $? -ne 0 ]
 then
-    dnf install ngnix -y
-    if [ $? -ne 0]
+    dnf install nginx -y
+    if [ $? -ne 0 ]
     then  
         echo " nginx installation ...failed"
         exit 1
@@ -25,10 +24,10 @@ else
 fi        
 
 dnf list installed httpd
-if [ $? -ne 0]
+if [ $? -ne 0 ]
 then
     dnf install httpd -y
-    if [ $? -ne 0]
+    if [ $? -ne 0 ]
     then  
         echo " httpd installation ...failed"
         exit 1
