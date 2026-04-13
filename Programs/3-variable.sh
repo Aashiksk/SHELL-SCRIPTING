@@ -7,7 +7,7 @@ R="\e[31m"
 N="\e[0m"
 if [ "$MYID" -ne 0 ]
 then
-  echo -e "$R You are not root user"  
+  echo -e "$R You are not root user $N"  
   exit 1
 fi
 
