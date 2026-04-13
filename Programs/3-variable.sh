@@ -1,11 +1,13 @@
 #!/bin/bash
 
+
 MYID=$(id -u)
 if [ "$MYID" -ne 0 ]
-then 
-    echo "you are not a root user"
-    exit 1
+then
+  echo "You are not root user"  
+  exit 1
 fi
+
 
 dnf list installed nginix
 if [ $? -ne 0]
