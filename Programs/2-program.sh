@@ -12,8 +12,30 @@ fi
 dnf list installed nginx
 if [ $? -ne 0 ]
 then 
-    echo "nginx is not installed, installing nginx"
+    dnf install nginx -y
+    if [ $? -ne 0 ]
+    then
+        echo "Failed to install nginx"
+        exit 1
+    else 
+        echo "nginx is installed successfully"
+    fi
 else
     echo "nginx is already installed"
+fi
+
+dnf list installed httpd
+if [ $? -ne 0 ]
+then 
+    dnf install httpd -y
+    if [ $? -ne 0 ]
+    then
+        echo "Failed to install httpd"
+        exit 1
+    else 
+        echo "httpd is installed successfully"
+    fi
+else
+    echo "httpd is already installed"
 fi
 
