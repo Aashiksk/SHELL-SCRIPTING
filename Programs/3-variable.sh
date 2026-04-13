@@ -7,18 +7,22 @@ then
   exit 1
 fi
 
+Validate(){
+    if [ $1 -ne 0 ]
+    then  
+        echo " $2 installation ...failed"
+        exit 1
+    else
+        echo " $2 installation ...success"
+    fi
+}
+
 
 dnf list installed nginx
 if [ $? -ne 0 ]
 then
     dnf install nginx -y
-    if [ $? -ne 0 ]
-    then  
-        echo " nginx installation ...failed"
-        exit 1
-    else
-        echo " nginx installation ...success"
-    fi
+    Validate $? " nginx installation"
 else
     echo " nginx is already ...installed"
 fi        
@@ -27,13 +31,7 @@ dnf list installed httpd
 if [ $? -ne 0 ]
 then
     dnf install httpd -y
-    if [ $? -ne 0 ]
-    then  
-        echo " httpd installation ...failed"
-        exit 1
-    else
-        echo " httpd installation ...success"
-    fi
+    Validate $? "httpd installation"
 else
     echo " httpd is already ...installed"
 fi   
