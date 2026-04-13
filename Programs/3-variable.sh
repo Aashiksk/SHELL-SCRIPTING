@@ -28,7 +28,7 @@ then
     dnf install nginx -y
     Validate $? " nginx installation"
 else
-    echo " nginx is already ... $Y installed  $N"
+    echo -e " nginx is already ... $Y installed  $N"
 fi        
 
 dnf list installed httpd
@@ -37,5 +37,5 @@ then
     dnf install httpd -y
     Validate $? "httpd installation"
 else
-    echo " httpd is already ... $Y installed $N"
+    echo -e " httpd is already ... $Y installed $N"
 fi   
