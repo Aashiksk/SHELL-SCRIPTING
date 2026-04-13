@@ -1,9 +1,13 @@
 #!/bin/bash
 
 MYID=$(id -u)
+G="\e[32m"
+Y="\e[33m"
+R="\e[31m"
+N="\e[0m"
 if [ "$MYID" -ne 0 ]
 then
-  echo "You are not root user"  
+  echo " $R You are not root user"  
   exit 1
 fi
 
