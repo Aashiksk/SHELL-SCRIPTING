@@ -30,19 +30,19 @@ Validate(){
 }
 
 
-dnf list installed nginx &>> $LOG_FILE_NAME
+dnf list installed nginx &>>$LOG_FILE_NAME 
 if [ $? -ne 0 ]
 then
-    dnf install nginx -y &>> $LOG_FILE_NAME
+    dnf install nginx -y &>>$LOG_FILE_NAME
     Validate $? " nginx installation"
 else
     echo -e " nginx is already ... $Y installed  $N"
 fi        
 
-dnf list installed httpd &>> $LOG_FILE_NAME
+dnf list installed httpd &>>$LOG_FILE_NAME
 if [ $? -ne 0 ]
 then
-    dnf install httpd -y &>> $LOG_FILE_NAME
+    dnf install httpd -y &>>$LOG_FILE_NAME
     Validate $? "httpd installation"
 else
     echo -e " httpd is already ... $Y installed $N"
