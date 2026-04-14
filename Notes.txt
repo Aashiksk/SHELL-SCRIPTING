@@ -15,3 +15,11 @@ $USER - The username of the current user
 $SHELL - The default shell of the current user
 $ID - The user ID of the current user, 0 indicates root user
 $RANDOM - A random number between 0 and 32767
+
+
+Functions in Shell Scripting:
+Functions are reusable blocks of code that perform a specific task. They help in organizing the code and
+make it more modular. Functions can take arguments and return values. The syntax for defining a function is as follows: 
+function function_name {
+    # code to be executed
+}
