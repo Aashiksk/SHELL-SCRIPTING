@@ -7,6 +7,12 @@ R="\e[31m"
 N="\e[0m"
 
 
+
+FOLDER_NAME="/var/log/SHELL_SCRIPTS_LOGS"
+LOG_FILE=$(echo $0 | cut -d "." -f1 )
+TIMESTAMP=$(date +"%Y-%m-%d%H-%M-%S")
+LOG_FILE_NAME=$FOLDER_NAME/$LOG_FILE-$TIMESTAMP.log
+
 if [ "$MYID" -ne 0 ]
 then
   echo -e "$R You are not root user $N"  
@@ -24,19 +30,19 @@ Validate(){
 }
 
 
-dnf list installed nginx 
+dnf list installed nginx &>>$LOG_FILE_NAME 
 if [ $? -ne 0 ]
 then
-    dnf install nginx -y 
+    dnf install nginx -y &>>$LOG_FILE_NAME
     Validate $? " nginx installation"
 else
     echo -e " nginx is already ... $Y installed  $N"
 fi        
 
-dnf list installed httpd 
+dnf list installed httpd &>>$LOG_FILE_NAME
 if [ $? -ne 0 ]
 then
-    dnf install httpd -y 
+    dnf install httpd -y &>>$LOG_FILE_NAME
     Validate $? "httpd installation"
 else
     echo -e " httpd is already ... $Y installed $N"
