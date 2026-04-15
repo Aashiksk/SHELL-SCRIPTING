@@ -10,7 +10,7 @@ N="\e[0m"
 
 FOLDER_NAME="/var/log/SHELL_SCRIPTS_LOGS"
 LOG_FILE=$(echo $0 | cut -d "." -f1 )
-TIMESTAMP=$(date +"%Y-%m-%d%H-%M-%S")
+TIMESTAMP=$(date +"%Y-%m-%d-%H-%M-%S")
 LOG_FILE_NAME=$FOLDER_NAME/$LOG_FILE-$TIMESTAMP.log
 
 if [ "$MYID" -ne 0 ]
