@@ -35,22 +35,15 @@ VALIDATE(){
 }
 
 
-dnf list installed nginx &>>$LOG_FILE_NAME 
-if [ $? -ne 0 ]
-then
-    dnf install nginx -y &>>$LOG_FILE_NAME
-    VALIDATE $? "nginx installation"
+for package in $@
+do
+    dnf list installed $package &>>$LOG_FILE_NAME 
+    if [ $? -ne 0 ]
+    then
+        dnf install $package -y &>>$LOG_FILE_NAME
+        VALIDATE $? "$package installation"
 else
-    echo -e "nginx is already ... $Y installed  $N"
-fi        
-
-dnf list installed httpd &>>$LOG_FILE_NAME
-if [ $? -ne 0 ]
-then
-    dnf install httpd -y &>>$LOG_FILE_NAME
-    VALIDATE $? "httpd installation"
-else
-    echo -e "httpd is already ... $Y installed $N"
+    echo -e "$package is already ... $Y installed  $N"
 fi  
 
 
