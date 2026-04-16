@@ -19,9 +19,7 @@ Check_root(){
         exit 1
     fi
 }
-
 echo "Script started executing at: $TIMESTAMP" &>>$LOG_FILE_NAME
-
 Check_root()
 
 
