@@ -14,7 +14,7 @@ check_root(){
 }
 check_root
 
-FILE_TO_DELETE=$(find "$SOURCE_DIR" -name "*.log" -mtime +14)
+FILE_TO_DELETE=$(find "$SOURCE_DIR" -name "*.log")
 echo "files to be deleted = $FILE_TO_DELETE"
 
 while read -r file
