@@ -9,6 +9,7 @@ check_root(){
   if [ "$UserId" -ne 0 ]
   then 
       echo "you should need root access"
+      exit 1
   fi    
 }
 check_root
